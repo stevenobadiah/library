@@ -78,6 +78,20 @@ function removeBook(id) {
     row.parentNode.removeChild(row);
 }
 
+function toggleRead(id) {
+    //below line isn't working properly
+    var index = bookIds.indexOf(id);
+    var book = library[index];
+    var button = document.getElementById("btnToggleRead" + id);
+    if (book.read == "Yes") {
+        book.read = "No"
+        button.textContent = "Read: " + book["read"];
+    } else {
+        book.read = "Yes"
+    }
+    button.textContent = "Read: " + book["read"];
+}
+
 function addRowHTML(book) {
     let row = table.insertRow(1);
 
@@ -94,10 +108,12 @@ function addRowHTML(book) {
     cell3.innerHTML = book["genre"];
     cell4.innerHTML = book["condition"];
     cell5.innerHTML = book["pageCount"];
-    cell6.innerHTML = book["read"];
 
-    let buttonId = "btnDelete" + book["id"];
-    cell7.innerHTML = "<button id=" + buttonId + " onClick=\"removeBook("+book["id"]+")\">Delete</button>";
+    let btnToggleReadId = "btnToggleRead" + book["id"];
+    cell6.innerHTML = "<button id=" + btnToggleReadId + " onClick=\"toggleRead("+book["id"]+")\">Read: " + book["read"] + "</button>";
+
+    let btnDeleteId = "btnDelete" + book["id"];
+    cell7.innerHTML = "<button id=" + btnDeleteId + " onClick=\"removeBook("+book["id"]+")\">Delete</button>";
 }
 
 const addToLibrary = (ev)=> {
