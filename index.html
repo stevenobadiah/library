@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Library</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="tableContainer">
+        <table id="table">
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Condition</th>
+                <th>PageCount</th>
+                <th>Read</th>
+                <th>Delete</th>
+            </tr>
+            <tbody id="tbody">
+                <tr>
+                    <td>The Saharan</td>
+                    <td>Shteve Snowbadiah</td>
+                    <td>Suspense and Thrillers</td>
+                    <td>Good</td>
+                    <td>327</td>
+                    <td>Yes</td>
+                    <td><button id="btnDelete0" onClick=removeBook(0)>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Romanov and the Wild Good Chase</td>
+                    <td>Steve Busheemi</td>
+                    <td>Memoir</td>
+                    <td>Very Good</td>
+                    <td>512</td>
+                    <td>Yes</td>
+                    <td><button id="btnDelete1" onClick=removeBook(1)>Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="button" id="btnAddBook">Add Book</button>
+
+    <div id="formContainer">
+        <form id="myForm" class="d-flex flex-column">
+            <h1>Submit a Book</h1>
+
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title">
+
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author">
+
+            <label for="genre">Genre</label>
+            <select id="genre" id="genre" name="genre">
+                <option value="Action and Adventure" id="actionAdventure">Action and Adventure</option>
+                <option value="Autobiographies" id="autobiographies">Autobiographies</option>
+                <option value="Biographies" id="biographies">Biographies</option>
+                <option value="Classics" id="classics">Classics</option>
+                <option value="Comic Book or Graphic Novel" id="comicOrGraphic">Comic Book or Graphic Novel</option>
+                <option value="Cookbooks" id="cookbooks">Cookbooks</option>
+                <option value="Detective and Mystery" id="detectiveMystery">Detective and Mystery</option>
+                <option value="Essays" id="essays">Essays</option>
+                <option value="Fantasy" id="fantasy">Fantasy</option>
+                <option value="Historical Fiction" id="historicalFiction">Historical Fiction</option>
+                <option value="History" id="history">History</option>
+                <option value="Horror" id="horror">Horror</option>
+                <option value="Literary Fiction" id="literaryFiction">Literary Fiction</option>
+                <option value="Memoir" id="memoir">Memoir</option>
+                <option value="Miscellaneous" id="miscellaneous" selected>Miscellaneous</option>
+                <option value="Poetry" id="poetry">Poetry</option>
+                <option value="Romance" id="romance">Romance</option>
+                <option value="Science Fiction" id="scienceFiction">Science Fiction</option>
+                <option value="Self Help" id="selfHelp">Self Help</option>
+                <option value="Short Stories" id="shortStories">Short Stories</option>
+                <option value="Suspence and Thrillers" id="suspenceThrillers">Suspense and Thrillers</option>
+                <option value="True Crime" id="trueCrime">True Crime</option>
+                <option value="Women's Fiction" id="womensFiction">Women's Fiction</option>
+            </select>
+
+            <label for="condition">Condition</label>
+            <select id="condition" name="condition">
+                <option id="veryGood" value="Very Good">Very Good</option>
+                <option id="good" value="Good">Good</option>
+                <option id="fair" value="Fair" selected>Fair</option>
+                <option id="poor" value="Poor">Poor</option>
+                <option id="veryPoor" value="Very Poor">Very Poor</option>
+            </select>
+
+            <label for="pageCount">Page Count</label>
+            <input type="number" id="pageCount" name="pageCount">
+
+            <h3>Read?</h3>
+            <div>
+                <input type="radio" id="yes" name="read" value="Yes" checked>
+                <label for="yes">Yes</label>
+                <input type="radio" id="no" name="read" value="No">
+                <label for="no">No</label>
+            </div>
+
+            <button type="submit" id="btnSubmit">Submit Book</button>
+            <button type="reset" id="btnCancel">Close</button>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
